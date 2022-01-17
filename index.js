@@ -21,7 +21,7 @@ app.get("/herois", function (req, res) {
 
 // [GET] "/herois/:id" - Read Single (by Id) (Ler um registro pelo ID)
 app.get("/herois/:id", function (req, res) {
-    const id = req.params.id;
+    const id = req.params.id - 1;
 
     const item = lista[id];
 
