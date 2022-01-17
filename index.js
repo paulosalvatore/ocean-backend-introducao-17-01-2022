@@ -34,9 +34,9 @@ app.get("/herois/:id", function (req, res) {
 
 // [POST] "/herois" - Create (Criar um registro)
 app.post("/herois", function (req, res) {
-    const item = req.body.nome;
+    const item = req.body;
 
-    lista.push(item);
+    lista.push(item.nome);
 
     res.send("Item adicionado com sucesso.");
 });
