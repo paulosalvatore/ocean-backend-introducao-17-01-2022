@@ -20,7 +20,7 @@ const lista = ["Mulher Maravilha", "Capitã Marvel", "Homem de Ferro"];
 
 // [GET] "/herois" - Read All (Ler todos os registros)
 app.get("/herois", function (req, res) {
-    res.send(lista);
+    res.send(lista.filter(Boolean));
 });
 
 // [GET] "/herois/:id" - Read Single (by Id) (Ler um registro pelo ID)
