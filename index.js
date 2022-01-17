@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 
+// Sinalizo para o Express que o body das requisições
+// estará sempre estruturado em JSON
+app.use(express.json());
+
 // Endpoint "/"
 app.get("/", function (req, res) {
     res.send("Hello, World!");
@@ -26,6 +30,15 @@ app.get("/herois/:id", function (req, res) {
     const item = lista[id];
 
     res.send(item);
+});
+
+// [POST] "/herois" - Create (Criar um registro)
+app.post("/herois", function (req, res) {
+    const item = req.body.nome;
+
+    lista.push(item);
+
+    res.send("Item adicionado com sucesso.");
 });
 
 app.listen(3000);
